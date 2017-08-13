@@ -1,0 +1,10 @@
+if(j == 0 && i > 0 && i < WIDTH - 1)//Top wall
+	floor[i][j] = new Wall(" " + Character.toString(startTop += 1) + " ");			
+else if(i == WIDTH - 1 && j > 0)//Right wall
+	floor[i][j] = new Wall(" " + Character.toString(startTop += 1) + " ");
+else if(i == 0 && j > 0  && j < HEIGHT - 1)//Left wall
+	floor[i][j] = new Wall(" " + Character.toString(startLeft -= 1) + " ");
+else if(j == HEIGHT - 1 && i > 0)//Bottom wall
+	floor[i][j] = new Wall(" " + Character.toString(startLeft -= 1) + " ");
+else
+	floor[i][j] = new Space();

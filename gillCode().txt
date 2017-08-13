@@ -1,0 +1,134 @@
+import java.util.Scanner;
+
+public class dice
+{
+   public int [] die;
+  
+    public dice()
+    {
+        generateDice();
+        displayDice();
+        for(int i = 1; i<=6; i++)
+            System.out.println("Number " + i + ": " + count(i));
+        for(int i = 1; i<=6; i++)
+            System.out.println("First Occurence of " + i + ":" + findFirst(i) );
+           
+        System.out.println("Number of Doubles: " + countDoubles() );
+        System.out.println("Number of Triples: " + countTriples() );
+    }
+   
+   
+    public static void main(String [] args)
+    {
+        new dice();
+    }
+   
+    public void generateDice()
+    {
+    	int diceNumber=0;
+    	System.out.println("How many dice do you want to roll?");
+        Scanner scan = new Scanner(System.in);
+    	diceNumber = scan.nextInt();
+    	die = new int[diceNumber];
+    	
+    	for(int i=0;i<diceNumber;i++)
+    	{
+    		die[i] = (int) (Math.random()*6)+1;
+    	}
+    }
+    
+    public void displayDice()
+    {
+        for(int i=0;i<die.length;i++)
+        {
+        	System.out.println(die[i]);
+        }
+    }
+   
+    public int count(int value)
+    {
+        int numCount = 0;
+         
+       
+        return numCount;
+    }
+   
+    public int findFirst(int value)
+    {
+        int first = -1;
+      for(int i=0;i<die.length;i++)
+         if(die[i]==value)
+         {
+    	    first = i;
+      		return i+1;
+         }
+	  return first;
+    }
+   
+   
+    public int countDoubles()
+    {
+        int numDoubles = 0;
+       
+        for(int i=1;i<die.length;i++)
+        {
+        	if(die[i]==die[i-1])
+        		numDoubles++;
+        }
+       
+        return numDoubles;
+    }
+   
+    public int countTriples()
+    {
+        int numTriples = 0;
+       
+        for(int i=2;i<die.length;i++)
+        {
+        	if(die[i]==die[i-1]&&die[i]==die[i-2])
+        		numTriples++;
+        }
+       
+       
+        return numTriples;
+    }
+   
+}
+______________________________________________________________________
+______________________________________________________________________
+import java.util.Scanner;
+
+public class inAndOut
+{
+  public static void main( String [] args )
+  {
+       averageTwo();
+       absoluteValue();
+       compareDecimalFraction();
+      
+  }
+
+  public static void averageTwo()
+  { 
+	  Scanner scan = new Scanner(System.in);
+      int num1, num2, avg;
+      System.out.println("Give 2 integers to be averaged");
+      
+      num1 = scan.nextInt();
+      num2 = scan.nextInt();
+      avg = (num1 + num2)/2;
+      System.out.println(avg);
+  }
+
+  public static void absoluteValue()
+  {
+	  Scanner scan = new Scanner(System.in);
+	  int num3, absVal;
+      System.out.println("Give an integer to show Absolute Value");
+      num3 = scan.nextInt();
+      if(num3<0)
+      {
+    	  num3*=-1;
+      }
+      System.out.println(num3);
+  }
